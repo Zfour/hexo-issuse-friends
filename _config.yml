@@ -5,8 +5,8 @@ setting:
 
   gitee_friends_links: # gitee友链配置
     enable: false
-    owner: XiaoXuxuy
-    repo: blog_friends
+    owner: xaoxuu
+    repo: friends
     state: open
 
   github_friends_links: # github友链配置
