@@ -11,7 +11,7 @@ setting:
 
   github_friends_links: # github友链配置
     enable: true
-    owner: Zfour
+    owner: Goopher97
     repo: friends
     state: open
 
