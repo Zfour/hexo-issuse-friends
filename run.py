@@ -46,7 +46,7 @@ def gitee_issuse(friend_poor):
                     issues_linklist = issues_soup.find_all('code')
                     source = issues_linklist[0].text
                     if "{" in source:
-                        source = source.replace("\n","")
+                        source = json.loads(source)
                         print(source)
                         friend_poor.append(source)
                 except:
@@ -92,7 +92,7 @@ def github_issuse(friend_poor):
                     issues_linklist = issues_soup.find_all('pre')
                     source = issues_linklist[0].text
                     if "{" in source:
-                        source = source.replace("\n","")
+                        source = json.loads(source)
                         print(source)
                         friend_poor.append(source)
                 except:
