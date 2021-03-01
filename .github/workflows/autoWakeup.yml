@@ -10,7 +10,7 @@ on:
   #  branches: 
   #    - master
   issues:
-  
+  repository_dispatch:
   watch:
     types: [started]
    
