@@ -9,8 +9,8 @@ on:
     - 'v*'
   #  branches: 
   #    - master
-  issue_comment:
-    types: [created,edited,deleted]
+  issues:
+  
   watch:
     types: [started]
    
