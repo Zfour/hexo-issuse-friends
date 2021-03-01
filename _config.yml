@@ -1,0 +1,24 @@
+setting:
+  request: # 网络请求设置
+    timeout: 10 # 超市
+    ssl: false  # SSL
+
+  gitee_friends_links: # gitee友链配置
+    enable: false # 使用时请设置为true
+    owner: Zfour # 填写你的gitee用户名
+    repo: zfour-friends # 填写你的gitee仓库名
+    state: open # 填写抓取的issue状态(open/progressing/closed)
+
+  github_friends_links: # github友链配置
+    enable: true # 使用时请设置为true
+    owner: Goopher97 # 填写你的github用户名
+    repo: friends # 填写你的github仓库名
+    state: open # 填写抓取的issue状态(open/closed)
+
+  user_info: # 获取的参数
+    - title
+    - description
+    - screenshot
+    - url
+    - avatar
+    - group
