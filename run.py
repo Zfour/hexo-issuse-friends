@@ -124,5 +124,5 @@ config = load_config()
 refresh_jsd = request.get_data('https://purge.jsdelivr.net/gh/' +
                          config['setting']['github_friends_links']['owner'] +
                          '/' +
-                         config['setting']['github_friends_links']['repo'] + '@latest/friendlist.json')
+                         config['setting']['github_friends_links']['repo'] + '/friendlist.json')
 print(refresh_jsd)
