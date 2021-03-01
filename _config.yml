@@ -1,21 +1,21 @@
 setting:
-  request: # 网络请求设置
-    timeout: 10 # 超市
-    ssl: false  # SSL
+  request: # 缃戠粶璇锋眰璁剧疆
+    timeout: 10 # 瓒呮椂璁剧疆
+    ssl: false # ssl璁剧疆
 
-  gitee_friends_links: # gitee友链配置
-    enable: false # 使用时请设置为true
-    owner: Zfour # 填写你的gitee用户名
-    repo: zfour-friends # 填写你的gitee仓库名
-    state: open # 填写抓取的issue状态(open/progressing/closed)
+  gitee_friends_links: # gitee鍙嬮摼閰嶇疆
+    enable: false
+    owner: Zfour
+    repo: friends
+    state: open
 
-  github_friends_links: # github友链配置
-    enable: true # 使用时请设置为true
-    owner: Zfour # 填写你的github用户名
-    repo: friends # 填写你的github仓库名
-    state: open # 填写抓取的issue状态(open/closed)
+  github_friends_links: # github鍙嬮摼閰嶇疆
+    enable: true
+    owner: Zfour
+    repo: friends
+    state: open
 
-  user_info: # 获取的参数
+  user_info: # 鐢ㄦ埛淇℃伅閰嶇疆
     - title
     - description
     - screenshot
