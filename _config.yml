@@ -11,6 +11,6 @@ setting:
 
   github_friends_links: # github友链配置
     enable: false
-    owner: xaoxuu
-    repo: friends
+    owner: zfour
+    repo: hexo-issuse-friends
     state: open
