@@ -14,19 +14,6 @@ def load_config():
     ymllist = yaml.load(ystr, Loader=yaml.FullLoader)
     return ymllist
 
-def reg(info_list, user_info, source):
-    print('----')
-    for item in info_list:
-        reg = re.compile('(?<=' + item + '": ).*')
-        result = re.findall(reg, str(source))
-        result = result[0].replace('\r', '')
-        result = result.replace('"', '')
-        result = result.replace("'", '')
-        result = result.replace(',', '')
-        print(result)
-        user_info.append(result)
-
-
 def gitee_issuse(friend_poor):
     print('\n')
     print('-------获取gitee友链----------')
@@ -58,11 +45,9 @@ def gitee_issuse(friend_poor):
                 try:
                     issues_linklist = issues_soup.find_all('code')
                     source = issues_linklist[0].text
-                    user_info = []
-                    info_list = ['title', 'url', 'avatar']
-                    reg(info_list, user_info, source)
-                    if user_info[1] != '你的链接':
-                        friend_poor.append(user_info)
+                    if "{" in source:
+                        print(source)
+                        friend_poor.append(source)
                 except:
                     errortimes += 1
                     continue
@@ -105,14 +90,9 @@ def github_issuse(friend_poor):
                 try:
                     issues_linklist = issues_soup.find_all('pre')
                     source = issues_linklist[0].text
-                    user_info = []
-                    info_list = config['setting']['user_info']
-                    reg(info_list, user_info, source)
-                    if user_info[1] != '你的链接':
-                        user_dict ={}
-                        for i,item in enumerate(info_list):
-                            user_dict[item]=user_info[i]
-                        friend_poor.append(user_dict)
+                    if "{" in source:
+                        print(source)
+                        friend_poor.append(source)
                 except:
                     errortimes += 1
                     continue
