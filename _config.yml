@@ -4,13 +4,13 @@ setting:
     ssl: false # ssl设置
 
   gitee_friends_links: # gitee友链配置
-    enable: true
+    enable: false
     owner: XiaoXuxuy
     repo: blog_friends
     state: open
 
   github_friends_links: # github友链配置
-    enable: false
+    enable: true
     owner: zfour
     repo: hexo-issuse-friends
     state: open
