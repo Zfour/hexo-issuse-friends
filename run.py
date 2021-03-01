@@ -120,9 +120,3 @@ get_friendlink(friend_poor)
 filename='friendlist.json'
 with open(filename,'w',encoding='utf-8') as file_obj:
    json.dump(friend_poor,file_obj,ensure_ascii=False)
-config = load_config()
-refresh_jsd = request.get_data('https://purge.jsdelivr.net/gh/' +
-                         config['setting']['github_friends_links']['owner'] +
-                         '/' +
-                         config['setting']['github_friends_links']['repo'] + '/friendlist.json')
-print(refresh_jsd)
