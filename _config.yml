@@ -1,21 +1,21 @@
 setting:
-  request: # ÍøÂçÇëÇóÉèÖÃ
-    timeout: 10 # ³¬ÊĞ
+  request: # ç½‘ç»œè¯·æ±‚è®¾ç½®
+    timeout: 10 # è¶…å¸‚
     ssl: false  # SSL
 
-  gitee_friends_links: # giteeÓÑÁ´ÅäÖÃ
-    enable: false # Ê¹ÓÃÊ±ÇëÉèÖÃÎªtrue
-    owner: Zfour # ÌîĞ´ÄãµÄgiteeÓÃ»§Ãû
-    repo: zfour-friends # ÌîĞ´ÄãµÄgitee²Ö¿âÃû
-    state: open # ÌîĞ´×¥È¡µÄissue×´Ì¬(open/progressing/closed)
+  gitee_friends_links: # giteeå‹é“¾é…ç½®
+    enable: false # ä½¿ç”¨æ—¶è¯·è®¾ç½®ä¸ºtrue
+    owner: Zfour # å¡«å†™ä½ çš„giteeç”¨æˆ·å
+    repo: zfour-friends # å¡«å†™ä½ çš„giteeä»“åº“å
+    state: open # å¡«å†™æŠ“å–çš„issueçŠ¶æ€(open/progressing/closed)
 
-  github_friends_links: # githubÓÑÁ´ÅäÖÃ
-    enable: true # Ê¹ÓÃÊ±ÇëÉèÖÃÎªtrue
-    owner: Goopher97 # ÌîĞ´ÄãµÄgithubÓÃ»§Ãû
-    repo: friends # ÌîĞ´ÄãµÄgithub²Ö¿âÃû
-    state: open # ÌîĞ´×¥È¡µÄissue×´Ì¬(open/closed)
+  github_friends_links: # githubå‹é“¾é…ç½®
+    enable: true # ä½¿ç”¨æ—¶è¯·è®¾ç½®ä¸ºtrue
+    owner: Zfour # å¡«å†™ä½ çš„githubç”¨æˆ·å
+    repo: zfour-friends # å¡«å†™ä½ çš„githubä»“åº“å
+    state: open # å¡«å†™æŠ“å–çš„issueçŠ¶æ€(open/closed)
 
-  user_info: # »ñÈ¡µÄ²ÎÊı
+  user_info: # è·å–çš„å‚æ•°
     - title
     - description
     - screenshot
