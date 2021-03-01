@@ -14,11 +14,3 @@ setting:
     owner: xaoxuu
     repo: friends
     state: open
-
-  user_info: # 用户信息配置
-    - title
-    - description
-    - screenshot
-    - url
-    - avatar
-    - group
