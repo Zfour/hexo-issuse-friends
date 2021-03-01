@@ -125,3 +125,4 @@ refresh_jsd = request.get_data('https://purge.jsdelivr.net/gh/' +
                          config['setting']['gitee_friends_links']['owner'] +
                          '/' +
                          config['setting']['gitee_friends_links']['repo'] + '@latest/friendlist.json')
+print(refresh_jsd)
