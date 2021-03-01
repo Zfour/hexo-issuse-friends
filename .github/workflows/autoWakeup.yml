@@ -10,7 +10,7 @@ on:
   #  branches: 
   #    - master
   issue_comment:
-    types: [created, deleted]
+    types: [created,edited,deleted]
   watch:
     types: [started]
    
