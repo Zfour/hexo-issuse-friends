@@ -9,8 +9,8 @@ on:
     - 'v*'
   #  branches: 
   #    - master
-  schedule:
-    - cron: "*/30 0-15 * * *"
+  issue_comment:
+    types: [created, deleted]
   watch:
     types: [started]
    
