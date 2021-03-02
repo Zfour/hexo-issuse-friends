@@ -22,6 +22,7 @@ def gitee_issuse(friend_poor):
     print('owner:', config['setting']['gitee_friends_links']['owner'])
     print('repo:', config['setting']['gitee_friends_links']['repo'])
     print('state:', config['setting']['gitee_friends_links']['state'])
+    print('labelid:', config['setting']['gitee_friends_links']['labelid'])
     try:
         for number in range(1, 100):
             print(number)
@@ -67,6 +68,7 @@ def github_issuse(friend_poor):
     print('owner:', config['setting']['github_friends_links']['owner'])
     print('repo:', config['setting']['github_friends_links']['repo'])
     print('state:', config['setting']['github_friends_links']['state'])
+    print('label:', config['setting']['github_friends_links']['label'])
     try:
         for number in range(1, 100):
             print(number)
