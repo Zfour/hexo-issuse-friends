@@ -79,7 +79,7 @@ def github_issuse(friend_poor):
             if config['setting']['github_friends_links']['label'] =='none':
                 label_plus = ''
             else:
-                label_plus = '+is%3Aissue+label%3A' + str(config['setting']['github_friends_links']['label'])
+                label_plus = '%20is%3Aissue%20label%3A' + str(config['setting']['github_friends_links']['label'])
             github = request.get_data('https://github.com/' +
                              config['setting']['github_friends_links']['owner'] +
                              '/' +
