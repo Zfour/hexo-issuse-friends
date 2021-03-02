@@ -26,15 +26,11 @@ def gitee_issuse(friend_poor):
     try:
         for number in range(1, 100):
             print(number)
-            if config['setting']['gitee_friends_links']['label'] =='none':
-                label_plus = ''
-            else:
-                label_plus = '&label_ids=' + str(config['setting']['gitee_friends_links']['labelid'])
             gitee = request.get_data('https://gitee.com/' +
                              config['setting']['gitee_friends_links']['owner'] +
                              '/' +
                              config['setting']['gitee_friends_links']['repo'] +
-                             '/issues?state=' + config['setting']['gitee_friends_links']['state'] + label_plus +'&page=' + str(number))
+                             '/issues?state=' + config['setting']['gitee_friends_links']['state'] +'&page=' + str(number))
             soup = BeautifulSoup(gitee, 'html.parser')
             main_content = soup.find_all(id='git-issues')
             linklist = main_content[0].find_all('a', {'class': 'title'})
@@ -76,15 +72,11 @@ def github_issuse(friend_poor):
     try:
         for number in range(1, 100):
             print(number)
-            if config['setting']['github_friends_links']['label'] =='none':
-                label_plus = ''
-            else:
-                label_plus = '%20is%3Aissue%20label%3A' + str(config['setting']['github_friends_links']['label'])
             github = request.get_data('https://github.com/' +
                              config['setting']['github_friends_links']['owner'] +
                              '/' +
                              config['setting']['github_friends_links']['repo'] +
-                             '/issues?q=is%3A' + config['setting']['github_friends_links']['state'] + label_plus + '&page=' + str(number))
+                             '/issues?q=is%3A' + config['setting']['github_friends_links']['state']+ '&page=' + str(number))
             soup = BeautifulSoup(github, 'html.parser')
             main_content = soup.find_all('div',{'aria-label': 'Issues'})
             linklist = main_content[0].find_all('a', {'class': 'Link--primary'})
