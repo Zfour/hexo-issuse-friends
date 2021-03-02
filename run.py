@@ -25,18 +25,15 @@ def gitee_issuse(friend_poor):
     try:
         for number in range(1, 100):
             print(number)
-<<<<<<< HEAD
             if config['setting']['gitee_friends_links']['labelid'] =='none':
                 label_plus = ''
             else:
                 label_plus = '&label_ids=' + str(config['setting']['gitee_friends_links']['labelid'])
-=======
->>>>>>> aec1ea6261453ffc841ec23519ae49ddc59e7747
             gitee = request.get_data('https://gitee.com/' +
                              config['setting']['gitee_friends_links']['owner'] +
                              '/' +
                              config['setting']['gitee_friends_links']['repo'] +
-                             '/issues?state=' + config['setting']['gitee_friends_links']['state'] +'&page=' + str(number))
+                             '/issues?state=' + config['setting']['gitee_friends_links']['state'] + label_plus +'&page=' + str(number))
             soup = BeautifulSoup(gitee, 'html.parser')
             main_content = soup.find_all(id='git-issues')
             linklist = main_content[0].find_all('a', {'class': 'title'})
@@ -73,22 +70,15 @@ def github_issuse(friend_poor):
     try:
         for number in range(1, 100):
             print(number)
-<<<<<<< HEAD
             if config['setting']['github_friends_links']['label'] =='none':
                 label_plus = ''
             else:
                 label_plus = '+label%3A' + config['setting']['github_friends_links']['label']
-=======
->>>>>>> aec1ea6261453ffc841ec23519ae49ddc59e7747
             github = request.get_data('https://github.com/' +
                              config['setting']['github_friends_links']['owner'] +
                              '/' +
                              config['setting']['github_friends_links']['repo'] +
-<<<<<<< HEAD
                              '/issues?q=is%3A' + config['setting']['github_friends_links']['state'] + str(label_plus) + '&page=' + str(number))
-=======
-                             '/issues?q=is%3A' + config['setting']['github_friends_links']['state']+ '&page=' + str(number))
->>>>>>> aec1ea6261453ffc841ec23519ae49ddc59e7747
             soup = BeautifulSoup(github, 'html.parser')
             main_content = soup.find_all('div',{'aria-label': 'Issues'})
             linklist = main_content[0].find_all('a', {'class': 'Link--primary'})
@@ -128,4 +118,3 @@ get_friendlink(friend_poor)
 filename='friendlist.json'
 with open(filename,'w',encoding='utf-8') as file_obj:
    json.dump(friend_poor,file_obj,ensure_ascii=False)
-print(len(friend_poor))
