@@ -8,13 +8,12 @@ setting:
     owner: xaoxuu
     repo: friends
     state: open
-    labelid: '77925545'
-    # 当为none时不筛选label
+    labelid: 77925545
+
 
   github_friends_links: # github友链配置
     enable: true
     owner: xaoxuu
     repo: friends
     state: open
-    label: 'active' 
-    # 当为none时不筛选label
+    label: active
