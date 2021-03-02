@@ -18,7 +18,6 @@ def gitee_issuse(friend_poor):
     print('\n')
     print('-------获取gitee友链----------')
     baselink = 'https://gitee.com'
-    errortimes = 0
     config = load_config()
     print('owner:', config['setting']['gitee_friends_links']['owner'])
     print('repo:', config['setting']['gitee_friends_links']['repo'])
@@ -26,7 +25,7 @@ def gitee_issuse(friend_poor):
     try:
         for number in range(1, 100):
             print(number)
-            if config['setting']['gitee_friends_links']['label'] =='none':
+            if config['setting']['gitee_friends_links']['labelid'] =='none':
                 label_plus = ''
             else:
                 label_plus = '&label_ids=' + str(config['setting']['gitee_friends_links']['labelid'])
@@ -40,7 +39,6 @@ def gitee_issuse(friend_poor):
             linklist = main_content[0].find_all('a', {'class': 'title'})
             if len(linklist) == 0:
                 print('爬取完毕')
-                print('失败了%r次' % errortimes)
                 break
             for item in linklist:
                 issueslink = baselink + item['href']
@@ -54,12 +52,9 @@ def gitee_issuse(friend_poor):
                         print(source)
                         friend_poor.append(source)
                 except:
-                    errortimes += 1
                     continue
     except Exception as e:
-        print('爬取完毕', e)
-        print(e.__traceback__.tb_frame.f_globals["__file__"])
-        print(e.__traceback__.tb_lineno)
+        print('爬取完毕')
 
     print('------结束gitee友链获取----------')
     print('\n')
@@ -68,7 +63,6 @@ def github_issuse(friend_poor):
     print('\n')
     print('-------获取github友链----------')
     baselink = 'https://github.com/'
-    errortimes = 0
     config = load_config()
     print('owner:', config['setting']['github_friends_links']['owner'])
     print('repo:', config['setting']['github_friends_links']['repo'])
@@ -79,18 +73,17 @@ def github_issuse(friend_poor):
             if config['setting']['github_friends_links']['label'] =='none':
                 label_plus = ''
             else:
-                label_plus = '+is%3Aissue+label%3A' + str(config['setting']['github_friends_links']['label'])
+                label_plus = '+label%3A' + config['setting']['github_friends_links']['label']
             github = request.get_data('https://github.com/' +
                              config['setting']['github_friends_links']['owner'] +
                              '/' +
                              config['setting']['github_friends_links']['repo'] +
-                             '/issues?q=is%3A' + config['setting']['github_friends_links']['state'] + label_plus + '&page=' + str(number))
+                             '/issues?q=is%3A' + config['setting']['github_friends_links']['state'] + str(label_plus) + '&page=' + str(number))
             soup = BeautifulSoup(github, 'html.parser')
             main_content = soup.find_all('div',{'aria-label': 'Issues'})
             linklist = main_content[0].find_all('a', {'class': 'Link--primary'})
             if len(linklist) == 0:
                 print('爬取完毕')
-                print('失败了%r次' % errortimes)
                 break
             for item in linklist:
                 issueslink = baselink + item['href']
@@ -104,12 +97,9 @@ def github_issuse(friend_poor):
                         print(source)
                         friend_poor.append(source)
                 except:
-                    errortimes += 1
                     continue
     except Exception as e:
-        print('爬取完毕', e)
-        print(e.__traceback__.tb_frame.f_globals["__file__"])
-        print(e.__traceback__.tb_lineno)
+        print('爬取完毕')
 
     print('------结束github友链获取----------')
     print('\n')
@@ -128,3 +118,4 @@ get_friendlink(friend_poor)
 filename='friendlist.json'
 with open(filename,'w',encoding='utf-8') as file_obj:
    json.dump(friend_poor,file_obj,ensure_ascii=False)
+print(len(friend_poor))

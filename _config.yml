@@ -8,11 +8,11 @@ setting:
     owner: xaoxuu
     repo: friends
     state: open
-    labelid: 77925545 # 当为‘none’时不筛选label，你可以定义筛选的字段的id如‘77925545’
+    labelid: 77925545 # none关闭功能
 
   github_friends_links: # github友链配置
     enable: true
     owner: xaoxuu
     repo: friends
     state: open
-    label: active # 当为‘none’时不筛选label，你可以定义筛选的字段如‘active’
+    label: active # none关闭功能
