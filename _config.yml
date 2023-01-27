@@ -13,6 +13,6 @@ setting:
   github_friends_links: # github友链配置
     enable: true
     owner: TY10909
-    repo: hexo-issuse-friends
+    repo: TY10909.github.io
     state: open
     label: active # none关闭功能
