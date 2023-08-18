@@ -4,15 +4,15 @@ setting:
     ssl: false # ssl设置
 
   gitee_friends_links: # gitee友链配置
-    enable: true
-    owner: xaoxuu
-    repo: friends
+    enable: false
+    owner: okaykai
+    repo: blog-talk
     state: open
     labelid: 77925545 # none关闭功能
 
   github_friends_links: # github友链配置
     enable: true
-    owner: xaoxuu
-    repo: friends
+    owner: okaykai
+    repo: blog-talk
     state: open
     label: active # none关闭功能
